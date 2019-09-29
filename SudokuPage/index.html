@@ -1,0 +1,242 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Random Sudoku Puzzles generated using https://github.com/robatron/sudoku.js </title>
+    <style>
+        .cell {
+            width: 19px;
+            height: 19px;
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        .subrow {
+            display: flex;
+        }
+
+        .block {
+            border: 1px solid black;
+        }
+
+        #body {
+            /*border: 1px solid black;*/
+            position: relative;
+            margin: auto;
+            width: fit-content;
+            padding: 0;
+            background: white;
+        }
+
+        .vAlign {
+            vertical-align: middle;
+            display: table-cell;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: table;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="vAlign">
+        <div id="body">
+            <div class="subrow">
+                <div class="block">
+                    <div class="subrow">
+                        <div class="cell" id="00"></div>
+                        <div class="cell" id="10"></div>
+                        <div class="cell" id="20"></div>
+                    </div>
+                    <div class="subrow">
+                        <div class="cell" id="01"></div>
+                        <div class="cell" id="11"></div>
+                        <div class="cell" id="21"></div>
+                    </div>
+                    <div class="subrow">
+                        <div class="cell" id="02"></div>
+                        <div class="cell" id="12"></div>
+                        <div class="cell" id="22"></div>
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="subrow">
+                        <div class="cell" id="30"></div>
+                        <div class="cell" id="40"></div>
+                        <div class="cell" id="50"></div>
+                    </div>
+                    <div class="subrow">
+                        <div class="cell" id="31"></div>
+                        <div class="cell" id="41"></div>
+                        <div class="cell" id="51"></div>
+                    </div>
+                    <div class="subrow">
+                        <div class="cell" id="32"></div>
+                        <div class="cell" id="42"></div>
+                        <div class="cell" id="52"></div>
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="subrow">
+                        <div class="cell" id="60"></div>
+                        <div class="cell" id="70"></div>
+                        <div class="cell" id="80"></div>
+                    </div>
+                    <div class="subrow">
+                        <div class="cell" id="61"></div>
+                        <div class="cell" id="71"></div>
+                        <div class="cell" id="81"></div>
+                    </div>
+                    <div class="subrow">
+                        <div class="cell" id="62"></div>
+                        <div class="cell" id="72"></div>
+                        <div class="cell" id="82"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="subrow">
+                <div class="block">
+                    <div class="subrow">
+                        <div class="cell" id="03"></div>
+                        <div class="cell" id="13"></div>
+                        <div class="cell" id="23"></div>
+                    </div>
+                    <div class="subrow">
+                        <div class="cell" id="04"></div>
+                        <div class="cell" id="14"></div>
+                        <div class="cell" id="24"></div>
+                    </div>
+                    <div class="subrow">
+                        <div class="cell" id="05"></div>
+                        <div class="cell" id="15"></div>
+                        <div class="cell" id="25"></div>
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="subrow">
+                        <div class="cell" id="33"></div>
+                        <div class="cell" id="43"></div>
+                        <div class="cell" id="53"></div>
+                    </div>
+                    <div class="subrow">
+                        <div class="cell" id="34"></div>
+                        <div class="cell" id="44"></div>
+                        <div class="cell" id="54"></div>
+                    </div>
+                    <div class="subrow">
+                        <div class="cell" id="35"></div>
+                        <div class="cell" id="45"></div>
+                        <div class="cell" id="55"></div>
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="subrow">
+                        <div class="cell" id="63"></div>
+                        <div class="cell" id="73"></div>
+                        <div class="cell" id="83"></div>
+                    </div>
+                    <div class="subrow">
+                        <div class="cell" id="64"></div>
+                        <div class="cell" id="74"></div>
+                        <div class="cell" id="84"></div>
+                    </div>
+                    <div class="subrow">
+                        <div class="cell" id="65"></div>
+                        <div class="cell" id="75"></div>
+                        <div class="cell" id="85"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="subrow">
+                <div class="block">
+                    <div class="subrow">
+                        <div class="cell" id="06"></div>
+                        <div class="cell" id="16"></div>
+                        <div class="cell" id="26"></div>
+                    </div>
+                    <div class="subrow">
+                        <div class="cell" id="07"></div>
+                        <div class="cell" id="17"></div>
+                        <div class="cell" id="27"></div>
+                    </div>
+                    <div class="subrow">
+                        <div class="cell" id="08"></div>
+                        <div class="cell" id="18"></div>
+                        <div class="cell" id="28"></div>
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="subrow">
+                        <div class="cell" id="36"></div>
+                        <div class="cell" id="46"></div>
+                        <div class="cell" id="56"></div>
+                    </div>
+                    <div class="subrow">
+                        <div class="cell" id="37"></div>
+                        <div class="cell" id="47"></div>
+                        <div class="cell" id="57"></div>
+                    </div>
+                    <div class="subrow">
+                        <div class="cell" id="38"></div>
+                        <div class="cell" id="48"></div>
+                        <div class="cell" id="58"></div>
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="subrow">
+                        <div class="cell" id="66"></div>
+                        <div class="cell" id="76"></div>
+                        <div class="cell" id="86"></div>
+                    </div>
+                    <div class="subrow">
+                        <div class="cell" id="67"></div>
+                        <div class="cell" id="77"></div>
+                        <div class="cell" id="87"></div>
+                    </div>
+                    <div class="subrow">
+                        <div class="cell" id="68"></div>
+                        <div class="cell" id="78"></div>
+                        <div class="cell" id="88"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Puzzle Fetching script -->
+    <script src="sudoku.js"></script>
+    <script>
+        var difficulty = window.location.search.slice(3);
+        if (difficulty.trim() == "")
+            difficulty = "easy";
+        else {
+            newD = 1 * difficulty;
+            if (newD != NaN) {
+                difficulty = newD;
+            }
+        }
+        var puzzleData = sudoku.generate(difficulty);
+        var x = 0;
+        var y = 0;
+        while (y != 9) {
+            console.log("" + x + y);
+            character = puzzleData[y * 9 + x];
+            if (character != ".") {
+                cell = document.getElementById("" + x + y);
+                cell.innerHTML = character;
+            }
+            x += 1;
+            if (x == 9) {
+                x = 0;
+                y += 1;
+            }
+        }
+    </script>
+</body>
+</html>
