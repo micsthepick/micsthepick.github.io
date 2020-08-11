@@ -1,2 +1,2 @@
 # micsthepick.github.io
-Website
+Nothing much is happening here, you can check out the [Sudoku Page](/SudokuPage) though.
