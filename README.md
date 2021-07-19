@@ -1,2 +1,4 @@
 # micsthepick.github.io
-Nothing much is happening here, you can check out the [Sudoku Page](/SudokuPage) though.
+Nothing much is happening here, you can check out these pages though:
+[Sudoku Page](/SudokuPage)
+[drum-machine-pokemon-calls](/drum-machine-pokemon-calls)
