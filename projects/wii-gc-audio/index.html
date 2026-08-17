@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A low-latency Opus audio pipeline using TAStm32 and the Wii or GameCube controller serial port.">
+  <meta name="color-scheme" content="dark">
+  <title>Wii/GameCube low-latency Opus audio — micsthepick</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="wordmark" href="/" aria-label="micsthepick home">micsthepick<span aria-hidden="true">/</span></a>
+    <nav aria-label="Project navigation"><a href="/#work">All work</a><a href="https://github.com/micsthepick/wii-gc-audio">Wii homebrew</a><a href="https://github.com/micsthepick/TAStm32">TAStm32 fork</a></nav>
+  </header>
+  <main id="main">
+    <header class="case-header">
+      <p class="eyebrow">Real-time systems · Embedded audio · Opus</p>
+      <h1>Wii/GameCube low-latency Opus audio</h1>
+      <div class="case-intro">
+        <p class="case-summary">A PC-to-console audio pipeline that carries Opus packets through a GameCube controller serial port using TAStm32.</p>
+        <dl class="case-facts">
+          <div><dt>Time to working pipeline</dt><dd>About one week</dd></div>
+          <div><dt>Period</dt><dd>August 2026</dd></div>
+          <div><dt>Role</dt><dd>Transport, embedded decoding and audio output</dd></div>
+        </dl>
+      </div>
+    </header>
+    <section class="section case-content" aria-labelledby="project-title">
+      <div><p class="eyebrow">Project outline</p><h2 id="project-title">Audio through an unusual serial link</h2></div>
+      <div class="case-prose">
+        <p>I built a low-latency path from a PC to Wii/GameCube homebrew by using my TAStm32 fork to stream Opus data through the controller serial port. The work spans two repositories: the STM32 controller-interface firmware and the console-side homebrew application.</p>
+        <h3>Transport and loss handling</h3>
+        <p>The sender turns encoded audio into packets suited to the controller link. On the console, the transport reassembles those packets and handles loss before passing complete frames to the embedded Opus decoder.</p>
+        <h3>Real-time playback</h3>
+        <p>Decoded samples flow through FIFO and ring buffers into the Wii audio DMA path. Buffer sizes and defaults were tuned to balance drop-out resistance against the latency that makes interactive audio feel disconnected.</p>
+        <ul class="tags" aria-label="Technologies"><li>Python</li><li>C/C++</li><li>Opus</li><li>TAStm32</li><li>PowerPC</li></ul>
+        <div class="case-links">
+          <a class="button button-primary" href="https://github.com/micsthepick/wii-gc-audio">View Wii homebrew <span aria-hidden="true">↗</span></a>
+          <a class="button" href="https://github.com/micsthepick/TAStm32">View TAStm32 fork <span aria-hidden="true">↗</span></a>
+          <a class="button" href="/">Back to portfolio</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><span>micsthepick.com</span><span>Opus · TAStm32 · Wii homebrew</span></footer>
+</body>
+</html>

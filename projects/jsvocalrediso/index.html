@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="JSVocalRedIso: a real-time FFT vocal isolation and reduction effect for REAPER.">
+  <meta name="color-scheme" content="dark">
+  <title>JSVocalRedIso — micsthepick</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="wordmark" href="/" aria-label="micsthepick home">micsthepick<span aria-hidden="true">/</span></a>
+    <nav aria-label="Project navigation">
+      <a href="/#work">All work</a>
+      <a href="https://github.com/micsthepick/JSVocalRedIso">GitHub</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <header class="case-header">
+      <p class="eyebrow">Audio DSP · JSFX · REAPER</p>
+      <h1>JSVocalRedIso</h1>
+      <div class="case-intro">
+        <p class="case-summary">A real-time effect for isolating or attenuating centre-panned vocals in stereo material, bringing an Audacity algorithm into REAPER's JSFX environment.</p>
+        <dl class="case-facts">
+          <div>
+            <dt>Initial build</dt>
+            <dd>About one month</dd>
+          </div>
+          <div>
+            <dt>Maintenance</dt>
+            <dd>2020–present</dd>
+          </div>
+          <div>
+            <dt>Role</dt>
+            <dd>Developer and maintainer</dd>
+          </div>
+        </dl>
+      </div>
+    </header>
+
+    <section class="section" aria-labelledby="demo-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Demo</p>
+          <h2 id="demo-title">Vocal isolation in REAPER</h2>
+        </div>
+        <p>The effect running as a JSFX plugin, with the centre mix and frequency-dependent controls exposed for live adjustment.</p>
+      </div>
+      <figure class="case-media">
+        <video controls playsinline preload="metadata">
+          <source src="/assets/projects/jsvocalrediso/demo.mp4" type="video/mp4">
+          Your browser does not support embedded MP4 video. <a href="/assets/projects/jsvocalrediso/demo.mp4">Download the demo</a>.
+        </video>
+        <figcaption>Short screen recording of JSVocalRedIso operating inside REAPER. Audio is included.</figcaption>
+      </figure>
+    </section>
+
+    <section class="section case-content" aria-labelledby="project-title">
+      <div>
+        <p class="eyebrow">Project outline</p>
+        <h2 id="project-title">From offline effect to real-time plugin</h2>
+      </div>
+      <div class="case-prose">
+        <p>The project implements the central algorithm from Audacity's VocalRedIso effect in JSFX so it can run in real time. It works on stereo mixes, using frequency-domain processing to construct a centre signal that can be isolated, attenuated, or mixed back into the original material.</p>
+
+        <h3>Getting to a working version</h3>
+        <p>The first compiling—but untested—implementation landed in June 2020. Roughly three weeks of corrections, FFT normalisation, and control redesign produced the first version described as working in early July. The initial build is therefore best understood as about one month from first implementation to a usable effect.</p>
+
+        <h3>Control over the result</h3>
+        <p>Rather than exposing vocal removal as a single switch, the plugin provides dry and centre mixing, low- and high-frequency cuts, frequency-dependent strength, and phase controls. Those controls make the limitations of centre-channel extraction visible and let the user tune the trade-off between vocal separation and artefacts for each mix.</p>
+
+        <h3>Ongoing maintenance</h3>
+        <p>I still maintain JSVocalRedIso. Work after the initial version has included alternative FFT window functions, fixes for clicking and buffering, an STFT-based release, additional host support, and memory-buffer corrections.</p>
+
+        <ul class="tags" aria-label="Technologies">
+          <li>JSFX</li><li>FFT</li><li>STFT</li><li>REAPER</li><li>Audio DSP</li>
+        </ul>
+        <div class="case-links">
+          <a class="button button-primary" href="https://github.com/micsthepick/JSVocalRedIso">View source on GitHub <span aria-hidden="true">↗</span></a>
+          <a class="button" href="/">Back to portfolio</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>micsthepick.com</span>
+    <span>JSVocalRedIso · Maintained 2020–present</span>
+  </footer>
+</body>
+</html>
