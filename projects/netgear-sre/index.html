@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A local QEMU and chroot environment for reverse engineering and debugging NETGEAR router firmware.">
+  <meta name="color-scheme" content="dark">
+  <title>NETGEAR firmware emulation — micsthepick</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="wordmark" href="/" aria-label="micsthepick home">micsthepick<span aria-hidden="true">/</span></a>
+    <nav aria-label="Project navigation"><a href="/#work">All work</a><a href="https://github.com/micsthepick/NETGEAR_sre">GitHub</a></nav>
+  </header>
+  <main id="main">
+    <header class="case-header">
+      <p class="eyebrow">Reverse engineering · Firmware · Emulation</p>
+      <h1>NETGEAR firmware emulation</h1>
+      <div class="case-intro">
+        <p class="case-summary">A local ARM environment for taking router firmware apart, reproducing its runtime assumptions, and debugging its binaries with familiar desktop tools.</p>
+        <dl class="case-facts">
+          <div><dt>Status</dt><dd>Active investigation</dd></div>
+          <div><dt>Started</dt><dd>March 2025</dd></div>
+          <div><dt>Role</dt><dd>Firmware extraction, emulation and reverse engineering</dd></div>
+        </dl>
+      </div>
+    </header>
+    <section class="section case-content" aria-labelledby="project-title">
+      <div><p class="eyebrow">Project outline</p><h2 id="project-title">Moving router debugging onto the workstation</h2></div>
+      <div class="case-prose">
+        <p>Embedded firmware is difficult to inspect when every experiment depends on opaque packaging, unfamiliar hardware, and services that expect an entire router around them. This project builds a repeatable host-side environment for NETGEAR firmware so individual programs can be observed and changed without using the router as the only test bench.</p>
+        <h3>From firmware image to ARM userspace</h3>
+        <p>The workflow uses Binwalk and UBI tooling to locate and extract the filesystem from a firmware image. QEMU user-mode emulation and Linux binary-format support then make it possible to enter the ARM filesystem with a chroot and run its executables from an x86 Linux host.</p>
+        <h3>Recreating the missing system</h3>
+        <p>Extracted applications still assume device nodes, mounted filesystems, configuration data, a serial console, and router-specific services. Shell tooling prepares mounts and startup state, while a small C shim supplies selected firmware behaviours so more of the original userspace can run in isolation.</p>
+        <h3>Making closed binaries observable</h3>
+        <p>GDB and GEF launchers support live debugging under emulation. Ghidra helpers, binary-search utilities, rebuild scripts, and cross-compilation tooling shorten the loop between static analysis, a firmware modification, and the next controlled run.</p>
+        <ul class="tags" aria-label="Technologies"><li>QEMU</li><li>ARM</li><li>GDB</li><li>GEF</li><li>Ghidra</li><li>Binwalk</li><li>Linux chroot</li><li>C</li></ul>
+        <div class="case-links"><a class="button button-primary" href="https://github.com/micsthepick/NETGEAR_sre">View source on GitHub <span aria-hidden="true">↗</span></a><a class="button" href="/">Back to portfolio</a></div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><span>micsthepick.com</span><span>QEMU · ARM · Firmware reverse engineering</span></footer>
+</body>
+</html>
